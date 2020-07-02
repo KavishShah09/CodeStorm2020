@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import SignUp from "./components/signUpForm";
 import {
   Nav,
   Navbar,
@@ -13,7 +13,6 @@ import {
 } from "react-bootstrap";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import About from "./components/about";
-
 function App() {
   useEffect(() => {
     pingBackend();
@@ -66,7 +65,12 @@ function App() {
               />
               <Button variant="outline-dark">Search</Button>
             </Form>
-            <Button className="profile" variant="light " size="sm">
+            <Button
+              href="/profile"
+              className="profile"
+              variant="light "
+              size="sm"
+            >
               <Image
                 src="images/user-icon.svg"
                 height="35px"
@@ -87,6 +91,7 @@ function App() {
           </Navbar.Collapse>
         </Navbar>
         <Route exact path="/about" component={About} />
+        <Route exact path="/profile" component={SignUp} />
       </Router>
     </div>
   );
