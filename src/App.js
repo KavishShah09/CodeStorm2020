@@ -6,6 +6,7 @@ import About from './components/About'
 import MainNav from './components/MainNav'
 import SignUp from './components/SignUp'
 import Login from './components/Login'
+import Items from './components/Items'
 
 function App() {
 	useEffect(() => {
@@ -36,6 +37,7 @@ function App() {
 						<Route exact path="/about" component={About} />
 						<Route exact path="/signup" component={SignUp} />
 						<Route exact path="/login" component={Login} />
+						<Route exact path="/shop" component={Items} />
 					</Switch>
 				</Router>
 			</div>
