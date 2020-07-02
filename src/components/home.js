@@ -5,8 +5,9 @@ function Home() {
   return (
     <div>
       <div className="jumbotron">
-        <h1 className="display-4">
-          Welcome To <strong>GreenTerminal</strong>
+        <h1 className="display-4 ">
+          Welcome To <strong className="text-success">Green</strong>
+          <strong>Terminal</strong>
         </h1>
         <p className="lead">A place where fashion is led by environment</p>
         <hr className="my-4" />
