@@ -1,34 +1,28 @@
-import React from 'react'
-import {
-	Form,
-	Button,
-	Container
-  } from "react-bootstrap";
-function Login(){
-    const [userInput, setUserInput] = useState({
-		
+import React, { useState } from 'react'
+import { Form, Button, Container } from 'react-bootstrap'
+function Login() {
+	const [userInput, setUserInput] = useState({
 		username: '',
 		password: '',
-		
 	})
 	const handleOnChange = (e) => {
-		setUser({ ...user, [e.target.name]: e.target.value })
+		setUserInput({ ...userInput, [e.target.name]: e.target.value })
 	}
 
 	const handleOnSubmit = (e) => {
 		e.preventDefault()
-		registerUser()
+		loginUser()
 	}
 
 	const loginOptions = {
 		method: 'POST',
-		body: JSON.stringify(user),
+		body: JSON.stringify(userInput),
 		headers: {
 			'Content-Type': 'application/json',
 		},
 	}
 	const loginUser = async () => {
-		const response = await fetch('/api/login', signUpOptions)
+		const response = await fetch('/api/login', loginOptions)
 		const data = await response.json()
 		if (data.error_message !== '') {
 			setUserInput({
@@ -40,19 +34,16 @@ function Login(){
 		}
 	}
 
-
-   
-    return (
+	return (
 		<Container>
-		<Form onSubmit={handleOnSubmit}>
-		 	
-		<Form.Group controlId="Username" size="sm" name="foo">
+			<Form onSubmit={handleOnSubmit}>
+				<Form.Group controlId="Username" size="sm" name="foo">
 					<Form.Label>Username</Form.Label>
 					<Form.Control
 						type="text"
 						name="username"
 						onChange={handleOnChange}
-						value={user.username}
+						value={userInput.username}
 						placeholder="Enter username"
 					/>
 				</Form.Group>
@@ -62,16 +53,16 @@ function Login(){
 						type="password"
 						name="password"
 						onChange={handleOnChange}
-						value={user.password}
+						value={userInput.password}
 						placeholder="Password"
 					/>
-		</Form.Group>
-		<Button variant="primary" type="submit">
+				</Form.Group>
+				<Button variant="primary" type="submit">
 					Submit
 				</Button>
-		</Form>
-	    </Container>
-	);
+			</Form>
+		</Container>
+	)
 }
 
-export default Login;
+export default Login

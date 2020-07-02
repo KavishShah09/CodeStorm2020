@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Button, Container } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+
 function SignUp() {
 	const [user, setUser] = useState({
 		first_name: '',
@@ -138,9 +140,11 @@ function SignUp() {
 						placeholder=" Confirm Password"
 					/>
 				</Form.Group>
-				<Button variant="primary" type="submit">
-					Submit
-				</Button>
+				<Link to="/login">
+					<Button variant="primary" type="submit">
+						Submit
+					</Button>
+				</Link>
 			</Form>
 		</Container>
 	)

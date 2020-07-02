@@ -37,7 +37,7 @@ def signup():
             return jsonify({"error_message": "The entered username has already been taken"})
         else:
             cur.execute(
-                f'INSERT INTO users (first_name, last_name, username, email, password, address, age, phone_number) values(%s, %s, %s, %s, %s, %s, %s, %s)', (first_name, last_name, username, email, password, address, age, phone_number))
+                'INSERT INTO users (first_name, last_name, username, email, password, address, age, phone_number) values(%s, %s, %s, %s, %s, %s, %s, %s)', (first_name, last_name, username, email, password, address, age, phone_number))
             mysql.connection.commit()
             cur.close()
             return jsonify({"error_message": ""})
@@ -71,8 +71,8 @@ def login():
 
 @app.route('/api/item', methods=['GET', 'POST'])
 def item():
+    cur = mysql.connection.cursor()
     if request.method == 'GET':
-        cur = mysql.connection.cursor()
 
         result = cur.execute('SELECT * FROM items')
         if result > 0:
@@ -82,13 +82,19 @@ def item():
         else:
             return jsonify({"error_message": "No products available"})
     if request.method == 'POST':
-        # obj = json.loads(request.data)
-        # title = obj['title']
-        # description = obj['description']
-        # category = obj['category']
-        # price = obj['price']
-        # rating = obj['rating']
-        # image_path = obj['image_path']
+        obj = json.loads(request.data)
+        title = obj['title']
+        description = obj['description']
+        category = obj['category']
+        price = obj['price']
+        rating = obj['rating']
+        image_path = obj['image_path']
+
+        cur.execute('INSERT INTO items (title, description, category, price, rating, image_path) values(%s, %s, %s, %s, %s, %s)',
+                    (title, description, category, price, rating, image_path))
+
+        mysql.connection.commit()
+        cur.close()
 
         return jsonify({"error_message": ""})
 
