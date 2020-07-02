@@ -7,7 +7,7 @@ function Home() {
 				<h1 className="display-4">
 					Welcome To <strong>GreenTerminal</strong>
 				</h1>
-				<p className="lead">A place where fashion is led by envirionment</p>
+				<p className="lead">A place where fashion is led by environment</p>
 				<hr className="my-4" />
 				<p>Click on Sign Up to get started</p>
 				<a className="btn btn-primary btn-lg" href="/signup" role="button">
