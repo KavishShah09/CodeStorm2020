@@ -32,9 +32,9 @@ def signup():
 
         cur = mysql.connection.cursor()
         result = cur.execute(
-            'SELECT username FROM users WHERE email=%s', [email])
+            'SELECT username FROM users WHERE email=%s', [username])
         if result > 0:
-            return jsonify({"error_message": "The entered email address or username has already been taken"})
+            return jsonify({"error_message": "The entered username has already been taken"})
         else:
             cur.execute(
                 f'INSERT INTO users (first_name, last_name, username, email, password, address, age, phone_number) values(%s, %s, %s, %s, %s, %s, %s, %s)', (first_name, last_name, username, email, password, address, age, phone_number))
