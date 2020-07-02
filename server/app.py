@@ -77,8 +77,7 @@ def item():
         result = cur.execute('SELECT * FROM items')
         if result > 0:
             items = cur.fetchall()
-            items['error_message'] = ""
-            return jsonify(items)
+            return jsonify({"items": items, "error_message": ""})
         else:
             return jsonify({"error_message": "No products available"})
     if request.method == 'POST':
