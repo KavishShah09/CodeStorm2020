@@ -69,5 +69,29 @@ def login():
             return jsonify({"error_message": f"User with username '{username}' does not exist. Sign Up if you haven't registered"})
 
 
+@app.route('/api/item', methods=['GET', 'POST'])
+def item():
+    if request.method == 'GET':
+        cur = mysql.connection.cursor()
+
+        result = cur.execute('SELECT * FROM items')
+        if result > 0:
+            items = cur.fetchall()
+            items['error_message'] = ""
+            return jsonify(items)
+        else:
+            return jsonify({"error_message": "No products available"})
+    if request.method == 'POST':
+        # obj = json.loads(request.data)
+        # title = obj['title']
+        # description = obj['description']
+        # category = obj['category']
+        # price = obj['price']
+        # rating = obj['rating']
+        # image_path = obj['image_path']
+
+        return jsonify({"error_message": ""})
+
+
 if __name__ == '__main__':
     app.run(debug=True)
