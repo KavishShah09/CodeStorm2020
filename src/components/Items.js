@@ -1,7 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function Items() {
 	const [items, setItems] = useState([])
+
+	const getItems = async () => {
+		const response = await fetch('/api/items', {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		})
+		const data = await response.json()
+		if (data.error_message === '') {
+			setItems(data.items)
+		}
+	}
+
+	useEffect(() => {
+		getItems()
+	}, [])
 
 	return (
 		<div className="container">
@@ -9,7 +26,7 @@ function Items() {
 				{items.map((item) => (
 					<div className="col-sm-6">
 						<div className="card">
-							<img class="card-img-top" src={item.image_path} alt="" />
+							<img className="card-img-top" src={item.image_path} alt="" />
 							<div className="card-body">
 								<h5 className="card-title"> {item.title} </h5>
 								<p className="card-text"> {item.description} </p>

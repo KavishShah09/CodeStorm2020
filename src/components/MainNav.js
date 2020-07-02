@@ -6,7 +6,7 @@ function MainNav() {
 		<div>
 			<Navbar bg="dark" variant="dark" expand="lg">
 				<Navbar.Brand href="/">
-					<img src="images/logo.png" height="40" width="141.46" alt="" srcset="" />
+					<img src="images/logo.png" height="40" width="141.46" alt="" />
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">

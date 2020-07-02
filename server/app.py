@@ -69,7 +69,7 @@ def login():
             return jsonify({"error_message": f"User with username '{username}' does not exist. Sign Up if you haven't registered"})
 
 
-@app.route('/api/item', methods=['GET', 'POST'])
+@app.route('/api/items', methods=['GET', 'POST'])
 def item():
     cur = mysql.connection.cursor()
     if request.method == 'GET':
