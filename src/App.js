@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
-import './App.css'
-
+import React, { useEffect } from 'react';
+import './App.css';
+import SignUp from './components/signUpForm'; 
 function App() {
 	useEffect(() => {
 		pingBackend()
@@ -22,7 +22,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<h1>Code Storm 2020</h1>
+			<SignUp />
 		</div>
 	)
 }
