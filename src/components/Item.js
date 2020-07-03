@@ -1,28 +1,28 @@
 import React, { useState, useEffect } from 'react'
 
 function Item({ match }) {
-	const [item, setItem] = useState({})
+	// const [item, setItem] = useState({})
 
-	const getItem = async () => {
-		const response = await fetch(`/api/item/${match.params.id}`, {
-			method: 'GET',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-		})
-		const data = await response.json()
-		if (data.error_message === '') {
-			setItem(data.item)
-		}
-	}
+	// const getItem = async () => {
+	// 	const response = await fetch(`/api/item/${match.params.id}`, {
+	// 		method: 'GET',
+	// 		headers: {
+	// 			'Content-Type': 'application/json',
+	// 		},
+	// 	})
+	// 	const data = await response.json()
+	// 	if (data.error_message === '') {
+	// 		setItem(data.item)
+	// 	}
+	// }
 
-	useEffect(() => {
-		getItem()
-	}, [])
+	// useEffect(() => {
+	// 	getItem()
+	// }, [])
 
 	return (
 		<div className="mt-5">
-			<div className="d-inline">
+			{/* <div className="d-inline">
 				<div className="row">
 					<div className="col-4">
 						<img src={item.image_path} alt="" />
@@ -40,8 +40,8 @@ function Item({ match }) {
 						</a>
 					</div>
 				</div>
-			</div>
-			{/* <div className="d-inline">
+			</div> */}
+			<div className="d-inline">
 				<div className="row">
 					<div className="col-4">
 						<img
@@ -62,7 +62,7 @@ function Item({ match }) {
 						</a>
 					</div>
 				</div>
-			</div> */}
+			</div>
 		</div>
 	)
 }
