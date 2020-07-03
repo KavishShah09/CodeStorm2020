@@ -54,12 +54,17 @@ function Item({ match }) {
 
         <div className="col-md-8">
           <h1 className="my-4 text-white text-left">Title</h1>
-          <h3 className="my-3 text-white text-left">Product Description</h3>
+          <h3 className="my-3 text-white text-left">Product Description :</h3>
           <p className="text-white text-left">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra
             euismod odio, gravida pellentesque urna varius vitae.
           </p>
-          <h3 className="text-white text-left">Price: 4cr</h3>
+          <h3 className="text-white text-left">Price: </h3>
+          <h5 className="text-white text-left">₹299</h5>
+          <p className="text-success text-left">In Stock</p>
+          <p className="text-white text-left">
+            Deliverable in 3-4 Business Days
+          </p>
         </div>
 
         <div className="col-4"></div>
