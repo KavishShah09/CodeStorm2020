@@ -45,8 +45,16 @@ body {
 
 .Environment {
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Libre Baskerville", serif;
   display: flex;
   justify-content: flex-start;
+}
+
+.home-page {
+  margin-top: 50px;
+}
+
+.white {
+  color: white;
 }

@@ -8,6 +8,7 @@ import MainNav from './components/MainNav'
 import SignUp from './components/SignUp'
 import Login from './components/Login'
 import Items from './components/Items'
+import Item from './components/Item'
 
 function App() {
 	useEffect(() => {
@@ -40,6 +41,7 @@ function App() {
 						<Route exact path="/signup" component={SignUp} />
 						<Route exact path="/login" component={Login} />
 						<Route exact path="/shop" component={Items} />
+						<Route exact path="/shop/:id" component={Item} />
 					</Switch>
 				</Router>
 			</div>
