@@ -24,7 +24,7 @@ function Items() {
 		<div className="page container">
 			<div className="row justify-content-center">
 				{items.map((item) => (
-					<div className="card-group col-4">
+					<div key={item.id} className="card-group col-4">
 						<div className="card card-cascade card-ecommerce wider shadow mb-5 ">
 							<div className="view view-cascade overlay text-center">
 								{' '}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Form, Button, Container, Row, Col } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 function Login() {
 	const [userInput, setUserInput] = useState({
@@ -26,7 +26,7 @@ function Login() {
 	const loginUser = async () => {
 		const response = await fetch('/api/login', loginOptions)
 		const data = await response.json()
-		if (data.error_message !== '') {
+		if (data.error_message === '') {
 			setUserInput({
 				username: '',
 				password: '',
@@ -39,32 +39,26 @@ function Login() {
 	return (
 		<Container className="login">
 			<Form onSubmit={handleOnSubmit}>
-				<Row>
-					<Col>
-						<Form.Group controlId="Username" size="sm" name="foo">
-							<Form.Label>Username</Form.Label>
-							<Form.Control
-								type="text"
-								name="username"
-								onChange={handleOnChange}
-								value={userInput.username}
-								placeholder="Enter username"
-							/>
-						</Form.Group>
-					</Col>
-					<Col>
-						<Form.Group controlId="Password">
-							<Form.Label>Password</Form.Label>
-							<Form.Control
-								type="password"
-								name="password"
-								onChange={handleOnChange}
-								value={userInput.password}
-								placeholder="Password"
-							/>
-						</Form.Group>
-					</Col>
-				</Row>
+				<Form.Group controlId="Username" size="sm" name="foo" className="d-flex justify-content-center">
+					<Form.Control
+						type="text"
+						name="username"
+						onChange={handleOnChange}
+						value={userInput.username}
+						placeholder="Enter username"
+						style={{ width: '18rem' }}
+					/>
+				</Form.Group>
+				<Form.Group controlId="Password" className="d-flex justify-content-center">
+					<Form.Control
+						type="password"
+						name="password"
+						onChange={handleOnChange}
+						value={userInput.password}
+						placeholder="Password"
+						style={{ width: '18rem' }}
+					/>
+				</Form.Group>
 				<Link to="/shop">
 					<Button variant="dark" type="submit">
 						Submit

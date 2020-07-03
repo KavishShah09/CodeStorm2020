@@ -58,7 +58,6 @@ function SignUp() {
 				<Row>
 					<Col>
 						<Form.Group controlId="FirstName" size="sm" name="foo">
-							<Form.Label>First Name</Form.Label>
 							<Form.Control
 								type="text"
 								name="first_name"
@@ -70,7 +69,6 @@ function SignUp() {
 					</Col>
 					<Col>
 						<Form.Group controlId="LastName" size="sm" name="foo">
-							<Form.Label>Last Name</Form.Label>
 							<Form.Control
 								type="text"
 								name="last_name"
@@ -82,9 +80,8 @@ function SignUp() {
 					</Col>
 					<Col>
 						<Form.Group controlId="Age">
-							<Form.Label>Age</Form.Label>
 							<Form.Control
-								type="text"
+								type="number"
 								name="age"
 								onChange={handleOnChange}
 								value={user.age}
@@ -96,7 +93,6 @@ function SignUp() {
 				<Row>
 					<Col xs="8">
 						<Form.Group controlId="Address 1">
-							<Form.Label>Address</Form.Label>
 							<Form.Control
 								type="text"
 								name="address"
@@ -108,7 +104,6 @@ function SignUp() {
 					</Col>
 					<Col>
 						<Form.Group controlId="Number">
-							<Form.Label>Phone Number</Form.Label>
 							<Form.Control
 								type="number"
 								name="phone_number"
@@ -122,7 +117,6 @@ function SignUp() {
 				<Row>
 					<Col>
 						<Form.Group controlId="Email" size="sm" name="foo">
-							<Form.Label>Email address</Form.Label>
 							<Form.Control
 								type="email"
 								name="email"
@@ -135,7 +129,6 @@ function SignUp() {
 					</Col>
 					<Col>
 						<Form.Group controlId="Username" size="sm" name="foo">
-							<Form.Label>Username</Form.Label>
 							<Form.Control
 								type="text"
 								name="username"
@@ -151,7 +144,6 @@ function SignUp() {
 				<Row>
 					<Col>
 						<Form.Group controlId="Password">
-							<Form.Label>Password</Form.Label>
 							<Form.Control
 								type="password"
 								name="password"
@@ -163,7 +155,6 @@ function SignUp() {
 					</Col>
 					<Col>
 						<Form.Group controlId="ConfirmPassword">
-							<Form.Label>Confirm Password</Form.Label>
 							<Form.Control
 								type="password"
 								name="confirm_password"
