@@ -54,15 +54,10 @@ function SignUp() {
 
   return (
     <Container className="signup">
-      <Form onSubmit={handleOnSubmit}>
+      <Form variant="light" onSubmit={handleOnSubmit}>
         <Row>
           <Col>
-            <Form.Group
-              variant="light"
-              controlId="FirstName"
-              size="sm"
-              name="foo"
-            >
+            <Form.Group controlId="FirstName" size="sm" name="foo">
               <Form.Label>First Name</Form.Label>
               <Form.Control
                 type="text"
