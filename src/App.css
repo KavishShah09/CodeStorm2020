@@ -50,3 +50,7 @@ body {
 	display: flex;
 	justify-content: flex-start;
 }
+
+.white {
+	color: white;
+}
