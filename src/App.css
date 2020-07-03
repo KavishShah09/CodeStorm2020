@@ -14,11 +14,13 @@ body {
 
 .signup {
 	margin-top: 50px;
+	color: white;
 }
 
 .login {
 	padding: 10px;
 	margin-top: 50px;
+	color: white;
 }
 
 .shop-now {
@@ -26,4 +28,16 @@ body {
 	top: 100px;
 	right: 100px;
 	letter-spacing: 3px;
+}
+
+.about {
+	margin-top: 50px;
+	color: white;
+}
+
+.about h1 {
+	font-size: 60px;
+	display: flex;
+	justify-content: center;
+	color: aqua;
 }

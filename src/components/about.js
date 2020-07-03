@@ -4,10 +4,12 @@ import "../App.css";
 function About() {
   return (
     <div className="about">
-      <h1>
-        GreenTerminal is a site that makes customers educated decisions before
+      <h1 className="heading">About Us</h1>
+      <p className="sub-heading">
+        GreenTerminal is a site that makes customers educated decisions before{" "}
+        <br />
         buying anything that may have harmed the environment in the making
-      </h1>
+      </p>
     </div>
   );
 }
