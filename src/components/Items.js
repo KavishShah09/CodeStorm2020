@@ -335,7 +335,6 @@ function Items() {
               </p>
               <p className="price">₹299</p>
 
-<<<<<<< HEAD
               <div className="card-footer">
                 <a href="/" className="btn btn-primary">
                   Buy now
@@ -346,33 +345,7 @@ function Items() {
         </div>
       </div>
     </div>
-    /* {items.map((item) => (
-					<div className="col-sm-4">
-						<div className="card">
-							<img className="card-img-top" src={item.image_path} alt="" />
-							<div className="card-body">
-								<h5 className="card-title"> {item.title} </h5>
-								<p className="card-text"> {item.description} </p>
-								<p>Price: {item.price}</p>
-								<p>Rating: {item.rating}</p>
-=======
-							<div className="card-footer">
->>>>>>> 67436740d78abc85e8382dad4b3fad125087135e
-								<a href="/" className="btn btn-primary">
-									Buy now
-								</a>
-							</div>
-						</div>
-					</div>
-<<<<<<< HEAD
-				))} */
   );
-=======
-				</div>
-			</div>
-		</div>
-	)
->>>>>>> 67436740d78abc85e8382dad4b3fad125087135e
 }
 
 export default Items;
