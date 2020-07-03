@@ -57,7 +57,12 @@ function SignUp() {
       <Form onSubmit={handleOnSubmit}>
         <Row>
           <Col>
-            <Form.Group controlId="FirstName" size="sm" name="foo">
+            <Form.Group
+              variant="light"
+              controlId="FirstName"
+              size="sm"
+              name="foo"
+            >
               <Form.Label>First Name</Form.Label>
               <Form.Control
                 type="text"

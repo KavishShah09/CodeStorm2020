@@ -1,10 +1,9 @@
 body {
-  background-color: green;
+  background: url(images/background.png);
 }
 
 .App {
   text-align: center;
-  background-color: green;
 }
 
 .App-logo {
@@ -45,11 +44,7 @@ body {
 .background {
   width: 100%;
   overflow: hidden;
-}
-
-.home-page {
-  background: url(./images/background.png) center no-repeat center/cover !important;
-  background-size: cover;
+  margin-top: 50px;
 }
 
 .signup {
