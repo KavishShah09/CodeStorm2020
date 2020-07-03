@@ -70,7 +70,7 @@ def login():
 
 
 @app.route('/api/items', methods=['GET', 'POST'])
-def item():
+def items():
     cur = mysql.connection.cursor()
     if request.method == 'GET':
 
@@ -96,6 +96,17 @@ def item():
         cur.close()
 
         return jsonify({"error_message": ""})
+
+
+@app.route('/api/item/<string:id>')
+def item(id):
+    cur = mysql.connection.cursor()
+    result = cur.execute('SELECT * FROM items WHERE id = %s', [id])
+    if result > 0:
+        item = cur.fetchone()
+        return jsonify({"item": item, "error_message": ""})
+    else:
+        return jsonify({"error_message": f"No item found for id {id}"})
 
 
 if __name__ == '__main__':
