@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Form, Button, Container, Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 function Login() {
 	const [userInput, setUserInput] = useState({
@@ -64,9 +65,11 @@ function Login() {
 						</Form.Group>
 					</Col>
 				</Row>
-				<Button variant="dark" type="submit">
-					Submit
-				</Button>
+				<Link to="/shop">
+					<Button variant="dark" type="submit">
+						Submit
+					</Button>
+				</Link>
 			</Form>
 		</Container>
 	)
