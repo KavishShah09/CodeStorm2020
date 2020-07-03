@@ -24,7 +24,7 @@ function Items() {
     <div className="page container">
       {/* <div className="row justify-content-center">
 				{items.map((item) => (
-					<div className="card-group col-4">
+					<div key={item.id} className="card-group col-4">
 						<div className="card card-cascade card-ecommerce wider shadow mb-5 ">
 							<div className="view view-cascade overlay text-center">
 								{' '}
@@ -335,6 +335,7 @@ function Items() {
               </p>
               <p className="price">₹299</p>
 
+<<<<<<< HEAD
               <div className="card-footer">
                 <a href="/" className="btn btn-primary">
                   Buy now
@@ -354,14 +355,24 @@ function Items() {
 								<p className="card-text"> {item.description} </p>
 								<p>Price: {item.price}</p>
 								<p>Rating: {item.rating}</p>
+=======
+							<div className="card-footer">
+>>>>>>> 67436740d78abc85e8382dad4b3fad125087135e
 								<a href="/" className="btn btn-primary">
 									Buy now
 								</a>
 							</div>
 						</div>
 					</div>
+<<<<<<< HEAD
 				))} */
   );
+=======
+				</div>
+			</div>
+		</div>
+	)
+>>>>>>> 67436740d78abc85e8382dad4b3fad125087135e
 }
 
 export default Items;
