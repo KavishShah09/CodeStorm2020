@@ -21,7 +21,7 @@ function MainNav() {
             <Image
               src="images/user-icon.png"
               height="35px"
-              width="23px"
+              width="33px"
               rounded
             />
           </Button>
@@ -31,7 +31,7 @@ function MainNav() {
             <Image
               src="images/cart-icon.png"
               height="35px"
-              width="23px"
+              width="33px"
               rounded
             />
           </Button>
