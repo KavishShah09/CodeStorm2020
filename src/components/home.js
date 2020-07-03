@@ -1,21 +1,25 @@
 import React from "react";
 import "../App.css";
+import { Image, Button } from "react-bootstrap";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Items from "./Items";
 
 function Home() {
   return (
-    <div>
-      <div className="jumbotron">
-        <h1 className="display-4 ">
-          Welcome To <strong className="text-success">Green</strong>
-          <strong>Terminal</strong>
-        </h1>
-        <p className="lead">A place where fashion is led by environment</p>
-        <hr className="my-4" />
-        <p>Click on Sign Up to get started</p>
-        <a className="btn btn-primary btn-lg" href="/signup" role="button">
-          Sign Up
-        </a>
-      </div>
+    <div className="home-page">
+      <Image className="background" src="images/background1.png" />
+      <Router>
+        <Switch>
+          <Button
+            href="/shop"
+            className="shop-now btn "
+            variant="outline-success"
+          >
+            SHOP NOW
+          </Button>{" "}
+          <Route exact path="/shop" component={Items} />
+        </Switch>
+      </Router>
     </div>
   );
 }
