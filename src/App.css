@@ -54,3 +54,8 @@ body {
 .home-page {
   margin-top: 50px;
 }
+
+.threeway {
+  display: flex;
+  justify-content: center;
+}
