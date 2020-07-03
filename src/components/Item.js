@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 
 function Item({ match }) {
@@ -41,54 +42,41 @@ function Item({ match }) {
 				</div>
 			</div> */
 
-    <div className="container">
-      <h1 className="my-4 text-white">Title</h1>
-
+    <div className="container ">
       <div className="row">
-        <div className="col-md-8">
+        <div className="col-4">
           <img
             className="img-fluid"
-            src="https://mms-images-prod.imgix.net/mms/images/catalog/b65970c681d6fa3ea1b6760d3c137415/colors/116223/views/alt/front_medium_extended.png?ixlib=rails-2.1.4&w=320&h=380&fit=crop&dpr=1&q=39&fm=png&auto=format
-		  "
+            src="https://mms-images-prod.imgix.net/mms/images/catalog/b65970c681d6fa3ea1b6760d3c137415/colors/116223/views/alt/front_medium_extended.png?ixlib=rails-2.1.4&w=320&h=380&fit=crop&dpr=1&q=39&fm=png&auto=format"
             alt=""
           />
         </div>
 
-        <div className="col-md-4">
-          <h3 className="my-3 text-white">Product Description</h3>
-          <p className="text-white">
+        <div className="col-md-8">
+          <h1 className="my-4 text-white text-left">Title</h1>
+          <h3 className="my-3 text-white text-left">Product Description</h3>
+          <p className="text-white text-left">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra
-            euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem,
-            adipiscing in adipiscing et, interdum nec metus. Mauris ultricies,
-            justo eu convallis placerat, felis enim.
+            euismod odio, gravida pellentesque urna varius vitae.
           </p>
-          <h3 className="my-3 text-white">Project Details</h3>
-          <ul className="text-white">
-            <li>Lorem Ipsum</li>
-            <li>Dolor Sit Amet</li>
-            <li>Consectetur</li>
-            <li>Adipiscing Elit</li>
-          </ul>
+          <h3 className="text-white text-left">Price: 4cr</h3>
         </div>
+
+        <div className="col-4"></div>
       </div>
+      <h2 className="my-4 text-white">Reviews</h2>
 
-      <h3 className="my-4 text-white">Related Products</h3>
-
-      <div className="row">
-        <div className="col-md-3 col-sm-6 mb-4">
-          <img className="img-fluid" src="http://placehold.it/500x300" alt="" />
+      <div className="justify-content-center">
+        <div className=" text-white">
+          <p>this is a review</p>
         </div>
 
-        <div className="col-md-3 col-sm-6 mb-4">
-          <img className="img-fluid" src="http://placehold.it/500x300" alt="" />
+        <div className="text-white">
+          <p>this is a review</p>
         </div>
 
-        <div className="col-md-3 col-sm-6 mb-4">
-          <img className="img-fluid" src="http://placehold.it/500x300" alt="" />
-        </div>
-
-        <div className="col-md-3 col-sm-6 mb-4">
-          <img className="img-fluid" src="http://placehold.it/500x300" alt="" />
+        <div className=" text-white">
+          <p>this is a review</p>
         </div>
       </div>
     </div>
