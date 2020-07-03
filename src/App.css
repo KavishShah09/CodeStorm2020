@@ -55,6 +55,11 @@ body {
   margin-top: 50px;
 }
 
+.threeway {
+  display: flex;
+  justify-content: center;
+}
+
 .white {
-	color: white;
+  color: white;
 }
