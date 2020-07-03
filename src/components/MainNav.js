@@ -19,7 +19,7 @@ function MainNav() {
           </Nav>
           <Button href="/" className="profile" variant="dark" size="sm">
             <Image
-              src="images/user-icon.svg"
+              src="images/user-icon.png"
               height="35px"
               width="23px"
               rounded
@@ -29,7 +29,7 @@ function MainNav() {
             <Badge variant="light">0</Badge>
             <span className="sr-only">unread messages</span>
             <Image
-              src="images/cart-icon.svg"
+              src="images/cart-icon.png"
               height="35px"
               width="23px"
               rounded

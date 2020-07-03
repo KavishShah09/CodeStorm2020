@@ -20,6 +20,10 @@ function Home() {
           <Route exact path="/shop" component={Items} />
         </Switch>
       </Router>
+      <h1 className="Environment">
+        The Clothing sector represents around 3% <br /> of the world’s global
+        production emissions of CO2
+      </h1>
     </div>
   );
 }
