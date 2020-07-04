@@ -1,90 +1,98 @@
-import React, { useState, useEffect } from "react";
-import { Col, Row, Card, Form, Button, Toast, CardDeck } from "react-bootstrap";
+import React, { useState } from 'react'
+import { Col, Row, Card, Form, Button } from 'react-bootstrap'
+import Moment from 'react-moment'
 
 function Review() {
-  return (
-    <div>
-      <br />
-      <br />
-      <CardDeck>
-        <Card border="primary" style={{ width: "18rem" }}>
-          <Card.Header className="text-success">Good product</Card.Header>
-          <Card.Body>
-            <Card.Title>Review by Raju Rastogi</Card.Title>
-            <Card.Text>Looks great and arrived in time.</Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </Card.Footer>
-        </Card>
-        <Card border="primary" style={{ width: "18rem" }}>
-          <Card.Header className="text-warning">Okay product</Card.Header>
-          <Card.Body>
-            <Card.Title>Review by Mrs. Rastogi</Card.Title>
-            <Card.Text>
-              Good product but very overpriced. Atayees ki hogayi hai Kammo,
-              Maruti 800 mangtay hain Dahej main, aray tu itna expensive cheez
-              becheja toh shaddi kaise hogi iski
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </Card.Footer>
-        </Card>
-        <Card border="primary" style={{ width: "18rem" }}>
-          <Card.Header className="text-danger">Bad product</Card.Header>
-          <Card.Body>
-            <Card.Title>Review by Walter White</Card.Title>
-            <Card.Text>I am the danger.</Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </Card.Footer>
-        </Card>
-      </CardDeck>
+	let today = new Date()
+	let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
 
-      <br />
-      <br />
+	const [reviews, setReviews] = useState([])
+	const [newReview, setNewReview] = useState({
+		description: '',
+		name: '',
+		date: date,
+	})
 
-      <h3 className="text-white">Add a review</h3>
-      <br />
-      <div className="feedback-form d-flex justify-content-center text-white">
-        <Form style={{ width: "50rem" }}>
-          <Row>
-            <Col>
-              <Form.Group controlId="exampleForm.ControlInput1">
-                <Form.Label>Full Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter your name" />
-              </Form.Group>
-            </Col>
-            <Col>
-              <Form.Group controlId="exampleForm.ControlInput1">
-                <Form.Label>Email Address</Form.Label>
-                <Form.Control type="text" placeholder="Enter your email" />
-              </Form.Group>
-            </Col>
-            <Form.Group controlId="exampleForm.ControlSelect1">
-              <Form.Label>Rating</Form.Label>
-              <Form.Control as="select">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </Form.Control>
-            </Form.Group>
-          </Row>
-          <Form.Group controlId="exampleForm.ControlTextarea1">
-            <Form.Label>Your review</Form.Label>
-            <Form.Control as="textarea" rows="3" />
-          </Form.Group>
-          <Button variant="dark" type="submit">
-            Submit
-          </Button>
-        </Form>
-      </div>
-    </div>
-  );
+	const handleOnChange = (e) => {
+		setNewReview({ ...newReview, [e.target.name]: e.target.value })
+	}
+
+	const handleOnSubmit = (e) => {
+		e.preventDefault()
+		setReviews([...reviews, newReview])
+	}
+
+	return (
+		<div>
+			<h4 className="text-white float-left mt-lg-5">Add a review:</h4>
+			<div className="feedback-form d-flex justify-content-center text-white">
+				<Form style={{ width: '59rem' }} className="mt-lg-5" onSubmit={handleOnSubmit}>
+					<Row>
+						<Col>
+							<Form.Group controlId="exampleForm.ControlInput1">
+								<Form.Control
+									type="text"
+									name="name"
+									value={newReview.name}
+									onChange={handleOnChange}
+									placeholder="Enter your name"
+								/>
+							</Form.Group>
+						</Col>
+					</Row>
+					<Form.Group controlId="exampleForm.ControlTextarea1">
+						<Form.Control
+							as="textarea"
+							rows="2"
+							name="description"
+							value={newReview.description}
+							onChange={handleOnChange}
+							placeholder="Enter your review"
+						/>
+					</Form.Group>
+					<Button variant="dark" type="submit">
+						Submit
+					</Button>
+				</Form>
+			</div>
+			<div className="reviews">
+				<h4 className="text-white text-left">Reviews : </h4>
+				{reviews.map((review) => (
+					<Card className="mt-3">
+						<Card.Body>
+							<Card.Title>{review.description}</Card.Title>
+						</Card.Body>
+						<Card.Footer>
+							<small className="text-muted text-right">
+								{review.name}{' '}
+								<Moment format="D MMM YYYY" withTitle>
+									{review.date}
+								</Moment>
+							</small>
+						</Card.Footer>
+					</Card>
+				))}
+				<Card className="mt-3">
+					<Card.Body>
+						<Card.Title>
+							Great fit. Bargain at the price and also made feel helping in the environment in some way
+						</Card.Title>
+					</Card.Body>
+					<Card.Footer>
+						<small className="text-muted text-right">John Doe 27 June 2020</small>
+					</Card.Footer>
+				</Card>
+				<Card className="mt-3">
+					<Card.Body>
+						<Card.Title>Been looking for such a t-shirt since a long time</Card.Title>
+					</Card.Body>
+					<Card.Footer>
+						<small className="text-muted text-right">Brad Cooper 29 June 2020</small>
+					</Card.Footer>
+				</Card>
+			</div>
+		</div>
+	)
 }
 
-export default Review;
+export default Review

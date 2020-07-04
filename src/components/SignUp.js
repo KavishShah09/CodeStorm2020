@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Form, Button, Container, Row, Col } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
 import '../App.css'
 function SignUp() {
 	const [user, setUser] = useState({
@@ -35,7 +34,7 @@ function SignUp() {
 	const registerUser = async () => {
 		const response = await fetch('/api/signup', signUpOptions)
 		const data = await response.json()
-		if (data.error_message !== '') {
+		if (data.error_message === '') {
 			setUser({
 				first_name: '',
 				last_name: '',
