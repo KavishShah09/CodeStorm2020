@@ -42,7 +42,7 @@ function Items() {
 			{/* <div className="row justify-content-center">
 				{items.map((item) => (
 					<div key={item.id} className="card-group col-4">
-						<div className="card card-cascade card-ecommerce wider shadow mb-5 {item.rating}">
+						<div className={`card card-cascade card-ecommerce wider shadow mb-5 ${item.rating}`}>
 							<div className="view view-cascade overlay text-center">
 								{' '}
 								<img className="card-img-top" src={item.image_path} alt="" height="300" />
