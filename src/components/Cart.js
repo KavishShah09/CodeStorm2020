@@ -1,6 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 function Cart() {
+	const [items, setItems] = useState([])
+
+	const getItems = async () => {
+		const response = await fetch('/api/cart', {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		})
+		const data = await response.json()
+		console.log(data.items)
+		if (data.error_message === '') {
+			setItems(data.items)
+		}
+	}
+
+	useEffect(() => {
+		getItems()
+	}, [])
+
 	return (
 		<div className="container text-white">
 			<h1 className="jumbotron-heading">Shopping Cart</h1>
