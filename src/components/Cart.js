@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 function Cart() {
 	const [items, setItems] = useState([])
@@ -122,9 +123,9 @@ function Cart() {
 							<div className="col mb-2">
 								<div className="row">
 									<div className="col">
-										<button className="btn btn-lg btn-block btn-success text-uppercase" href="/thanks">
-											Buy Now
-										</button>
+										<Link to="/thanks">
+											<button className="btn btn-lg btn-block btn-success text-uppercase">Buy Now</button>
+										</Link>
 									</div>
 								</div>
 							</div>

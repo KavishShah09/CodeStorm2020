@@ -35,6 +35,8 @@ function Item({ match }) {
 		if (data.error_message !== '') {
 			alert('Unable to add item to cart')
 			window.location.replace(`http://localhost:3000/shop/${match.params.id}`)
+		} else {
+			alert('Item added to cart. Click on the cart icon to check it')
 		}
 	}
 
@@ -73,7 +75,7 @@ function Item({ match }) {
 					<br />
 					<h3 className="text-white text-left d-flex justify-content-center mt-2">Price: ₹{item.price}</h3>
 					<p className="text-success text-left d-flex justify-content-center border-bottom border-success">In Stock</p>
-					<h3 className="my-3 text-white d-flex justify-content-center">Description</h3>
+					<h3 className="my-3 text-white d-flex justify-content-center">Description: </h3>
 					<p className="text-white text-center ">{item.description}</p>
 
 					<p className="text-white text-left d-flex justify-content-center">Deliverable in 3-4 Business Days</p>

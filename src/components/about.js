@@ -12,8 +12,6 @@ function About() {
 				<br />
 				<br />
 			</p>
-			<h2> We Reduce the negative effects of fashion in three ways</h2>
-			<br />
 			<br />
 			<h2> We have a Unique Rating System</h2>
 			<br />
@@ -49,6 +47,8 @@ function About() {
 				</Card>
 			</div>
 			<br />
+			<br />
+			<h2> We Reduce the negative effects of fashion in three ways</h2>
 			<br />
 			<div className="container-fluid threeway">
 				<Row>
