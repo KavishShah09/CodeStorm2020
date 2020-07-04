@@ -1,125 +1,133 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
 
 body {
-	background: url(images/background.png);
+  background: url(images/background.png);
 }
 
 .App {
-	text-align: center;
+  text-align: center;
 }
 
 .background {
-	width: 100%;
-	overflow: hidden;
+  width: 100%;
+  overflow: hidden;
 }
 
 .signup {
-	margin-top: 50px;
-	color: white;
+  margin-top: 50px;
+  color: white;
 }
 
 .login {
-	padding: 10px;
-	margin-top: 50px;
-	color: white;
+  padding: 10px;
+  margin-top: 50px;
+  color: white;
 }
 
 .shop-now {
-	position: absolute;
-	top: 100px;
-	right: 100px;
-	letter-spacing: 3px;
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  letter-spacing: 3px;
 }
 
 .about {
-	margin-top: 50px;
-	color: white;
+  margin-top: 50px;
+  color: white;
 }
 
 .about h1 {
-	font-size: 60px;
-	display: flex;
-	justify-content: center;
-	color: aqua;
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  color: aqua;
 }
 
 .Environment {
-	color: white;
-	font-size: 25px;
-	font-family: 'Libre Baskerville', serif;
-	display: flex;
-	justify-content: flex-start;
+  color: white;
+  font-size: 25px;
+  font-family: "Libre Baskerville", serif;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .home-page {
-	margin-top: 50px;
+  margin-top: 50px;
 }
 
 .threeway {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .white {
-	color: white;
+  color: white;
 }
 
 .text-good {
-	color: rgb(204, 204, 0);
+  color: rgb(204, 204, 0);
 }
 .text-best {
-	color: green;
+  color: green;
 }
 .text-okay {
-	color: orange;
+  color: orange;
 }
 
 .good:hover {
-	background-color: rgb(204, 204, 0);
-	color: white;
+  background-color: rgb(204, 204, 0);
+  color: white;
 }
 .best:hover {
-	background-color: green;
-	color: white;
+  background-color: green;
+  color: white;
 }
 .okay:hover {
-	background-color: orange;
-	color: white;
+  background-color: orange;
+  color: white;
 }
 
 .rating-system {
-	color: black;
-	flex-direction: column;
-	align-items: center;
-	align-self: center;
+  color: black;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+}
+
+.threeway {
+  margin-bottom: 20px;
 }
 .color-card {
-	background-color: rgb(255, 88, 28) !important;
+  background-color: rgb(255, 88, 28) !important;
 }
 .product {
-	font-family: 'minion-pro';
+  font-family: "minion-pro";
 }
 
 .product h1 {
-	color: rgb(136, 118, 20);
+  color: rgb(136, 118, 20);
 }
 
 .product-buttons button {
-	margin: 2px;
+  margin: 2px;
 }
 
 .wrapJumbotron {
-	min-height: 100vh;
-	background: url(images/background.png);
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  min-height: 100vh;
+  background: url(images/background.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .jumbotron {
-	text-align: center;
-	color: azure;
-	border-radius: 25px;
-	background: url(images/background.png);
-	box-shadow: 20px 20px 60px #021710, -20px -20px 60px #021f16;
+  text-align: center;
+  color: azure;
+  border-radius: 25px;
+  background: url(images/background.png);
+  box-shadow: 20px 20px 60px #021710, -20px -20px 60px #021f16;
+}
+
+.review {
+  color: white;
 }
