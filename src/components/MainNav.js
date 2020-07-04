@@ -30,7 +30,7 @@ function MainNav() {
 							rounded
 						/>
 					</Button>
-					<Button className="cart" variant="dark" size="sm">
+					<Button className="cart" href="/cart" variant="dark" size="sm">
 						<Badge variant="light">0</Badge>
 						<span className="sr-only">unread messages</span>
 						<Image
