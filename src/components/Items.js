@@ -53,7 +53,7 @@ function Items() {
 			</div> */}
       <div className="row justify-content-center">
         <div className="col-sm-3">
-          <div className="card card-cascade card-ecommerce wider shadow mb-5 ">
+          <div className="card card-cascade card-ecommerce wider shadow mb-5">
             <div className="view view-cascade overlay text-center">
               {" "}
               <img
