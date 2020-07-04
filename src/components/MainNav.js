@@ -40,7 +40,6 @@ function MainNav() {
 							<a className="dropdown-item" href="/login">
 								Login
 							</a>
-							<div className="dropdown-divider"></div>
 						</div>
 					</Button>
 					<Button className="cart" href="/cart" variant="dark" size="sm">
