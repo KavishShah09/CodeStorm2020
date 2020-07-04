@@ -1,5 +1,5 @@
 import React from 'react'
-import { Nav, Navbar, Button, Badge, Image } from 'react-bootstrap'
+import { Nav, Navbar, Button, Image } from 'react-bootstrap'
 
 function MainNav() {
 	return (
@@ -41,13 +41,9 @@ function MainNav() {
 								Login
 							</a>
 							<div className="dropdown-divider"></div>
-							<a className="dropdown-item" href="/cart">
-								Your Cart
-							</a>
 						</div>
 					</Button>
 					<Button className="cart" href="/cart" variant="dark" size="sm">
-						<Badge variant="light">0</Badge>
 						<span className="sr-only">unread messages</span>
 						<Image
 							src="https://raw.githubusercontent.com/KavishShah09/CodeStorm2020/master/public/images/cart-icon.png"
