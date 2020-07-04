@@ -109,5 +109,39 @@ def item(id):
         return jsonify({"error_message": f"No item found for id {id}"})
 
 
+@app.route('/api/cart')
+def cart():
+    cur = mysql.connection.cursor()
+    result = cur.execute('SELECT * FROM cart')
+    if result > 0:
+        items = cur.fetchall()
+        return jsonify({"items": items, "error_message": ""})
+    else:
+        return jsonify({"error_message": "Shopping cart is empty"})
+
+
+@app.route('/api/cart/<string:id>', methods=['POST', 'DELETE'])
+def modifyCart(id):
+    cur = mysql.connection.cursor()
+    if request.method == 'POST':
+        obj = json.loads(request.data)
+        title = obj['title']
+        rating = obj['rating']
+        price = obj['price']
+        cur.execute('INSERT INTO items (item_id, title, rating, price) values(%s, %s, %s, %s)',
+                    (id, title, rating, price))
+
+        mysql.connection.commit()
+        cur.close()
+
+        return jsonify({"error_message": ""})
+
+    if request.method == 'DELETE':
+        cur.execute('DELETE FROM cart WHERE id = %s', [id])
+        mysql.connection.commit()
+        cur.close()
+        return jsonify({"error_message": ""})
+
+
 if __name__ == '__main__':
     app.run(debug=True)
