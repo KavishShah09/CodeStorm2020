@@ -16,7 +16,6 @@ function App() {
 	return (
 		<div className="App">
 			<MainNav />
-
 			<div className="container-fluid">
 				<Router>
 					<Switch>

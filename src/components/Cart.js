@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import StripeCheckout from 'react-stripe-checkout'
 
 function Cart() {
 	const [items, setItems] = useState([])
@@ -39,6 +39,10 @@ function Cart() {
 	const handleOnRemove = (e) => {
 		deleteItem(e.target.id)
 		window.location.reload()
+	}
+
+	function handleToken(token, addresses) {
+		console.log({ token, addresses })
 	}
 
 	useEffect(() => {
@@ -123,9 +127,13 @@ function Cart() {
 							<div className="col mb-2">
 								<div className="row">
 									<div className="col">
-										<Link to="/thanks">
-											<button className="btn btn-lg btn-block btn-success text-uppercase">Buy Now</button>
-										</Link>
+										<StripeCheckout
+											stripeKey="pk_test_51H1HLzFCV0EJSYKgB5GfTu6kgCLPdn2Fzuexrla4gdVLfpkWjfvakXCxgJzflxWyjse3AVZzRnEGBUM5ESzzE6oy00esaSKO3W"
+											token={handleToken}
+											amount={total * 100}
+											currency="inr"
+											name="T-shirts"
+										/>
 									</div>
 								</div>
 							</div>

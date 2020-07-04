@@ -20,6 +20,11 @@ function Review() {
 	const handleOnSubmit = (e) => {
 		e.preventDefault()
 		setReviews([...reviews, newReview])
+		setNewReview({
+			description: '',
+			name: '',
+			date: date,
+		})
 	}
 
 	return (
