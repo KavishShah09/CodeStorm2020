@@ -115,7 +115,10 @@ def cart():
     result = cur.execute('SELECT * FROM cart')
     if result > 0:
         items = cur.fetchall()
-        return jsonify({"items": items, "error_message": ""})
+        cur.execute('SELECT SUM(price) as sum FROM cart')
+        totalList = cur.fetchone()
+        total = totalList['sum']
+        return jsonify({"items": items, "total": total, "error_message": ""})
     else:
         return jsonify({"error_message": "Shopping cart is empty"})
 
@@ -125,11 +128,13 @@ def modifyCart(id):
     cur = mysql.connection.cursor()
     if request.method == 'POST':
         obj = json.loads(request.data)
+        item_id = id
         title = obj['title']
         rating = obj['rating']
         price = obj['price']
-        cur.execute('INSERT INTO items (item_id, title, rating, price) values(%s, %s, %s, %s)',
-                    (id, title, rating, price))
+        image_path = obj['image_path']
+        cur.execute('INSERT INTO cart (item_id, title, rating, price, image_path) values(%s, %s, %s, %s, %s)',
+                    (item_id, title, rating, price, image_path))
 
         mysql.connection.commit()
         cur.close()

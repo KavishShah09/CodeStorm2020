@@ -1,48 +1,52 @@
-import React, { useState, useEffect } from "react";
-import { Button, Modal } from "react-bootstrap";
+import React, { useState, useEffect } from 'react'
 
 function Items() {
-  // const [items, setItems] = useState([])
+	const [items, setItems] = useState([])
 
-  // const getItems = async () => {
-  // 	const response = await fetch('/api/items', {
-  // 		method: 'GET',
-  // 		headers: {
-  // 			'Content-Type': 'application/json',
-  // 		},
-  // 	})
-  // 	const data = await response.json()
-  // 	if (data.error_message === '') {
-  // 		setItems(data.items)
-  // 	}
-  // }
+	const getItems = async () => {
+		const response = await fetch('/api/items', {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		})
+		const data = await response.json()
+		if (data.error_message === '') {
+			setItems(data.items)
+		}
+	}
 
-  // useEffect(() => {
-  // 	getItems()
-  // }, [])
+	useEffect(() => {
+		getItems()
+	}, [])
 
-  return (
-    <div className="page container">
-      <div className="ratings">
-        <br />
-        <ul>
-          <li className="d-inline mr-5" style={{ color: "white" }}>
-            Environmental Rating:
-          </li>
-          <li className="d-inline mr-5" style={{ color: "green" }}>
-            Best
-          </li>
-          <li className="d-inline mr-5" style={{ color: "rgb(204, 204, 0)" }}>
-            Good
-          </li>
-          <li className="d-inline mr-5" style={{ color: "orange" }}>
-            Okay
-          </li>
-        </ul>
-        <br />
-      </div>
+	return (
+		<div className="page container">
+			<div className="ratings">
+				<br />
+				<ul>
+					<li className="d-inline mr-5" style={{ color: 'white' }}>
+						Environmental Rating:
+					</li>
+					<li className="d-inline mr-5" style={{ color: 'green' }}>
+						Best
+					</li>
+					<li className="d-inline mr-5" style={{ color: 'rgb(204, 204, 0)' }}>
+						Good
+					</li>
+					<li className="d-inline mr-5" style={{ color: 'orange' }}>
+						Okay
+					</li>
+					<li className="d-inline mr-5">
+						<a href="/about" style={{ color: 'white' }}>
+							Check What It Means Here!
+						</a>
+					</li>
+				</ul>
+				<br />
+			</div>
 
-      {/* <div className="row justify-content-center">
+			<div className="row justify-content-center">
 				{items.map((item) => (
 					<div key={item.id} className="card-group col-4">
 						<div className={`card card-cascade card-ecommerce wider shadow mb-5 ${item.rating}`}>
@@ -69,303 +73,9 @@ function Items() {
 						</div>
 					</div>
 				))}
-			</div> */}
-      <div className="row justify-content-center">
-        <div className="col-sm-4">
-          <div className="card card-cascade card-ecommerce wider shadow mb-5 good">
-            <div className="view view-cascade overlay text-center">
-              {" "}
-              <img
-                className="card-img-top"
-                src="https://mms-images-prod.imgix.net/mms/images/catalog/b65970c681d6fa3ea1b6760d3c137415/colors/116223/views/alt/front_medium_extended.png?ixlib=rails-2.1.4&w=320&h=380&fit=crop&dpr=1&q=39&fm=png&auto=format"
-                alt=""
-                height="300"
-              />
-              <div className="mask rgba-white-slight"></div>
-            </div>
-            <div className="card-body card-body-cascade text-center">
-              <h4 className="card-title">
-                <strong>
-                  <p>Title</p>
-                </strong>
-              </h4>
-              <p className="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda, reiciendis.{" "}
-              </p>
-              <p className="price">₹299</p>
-
-              <div className="card-footer">
-                <a href="/" className="btn btn-dark">
-                  Buy now
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-sm-4">
-          <div className="card card-cascade card-ecommerce wider shadow mb-5 best ">
-            <div className="view view-cascade overlay text-center">
-              {" "}
-              <img
-                className="card-img-top"
-                src="https://mms-images-prod.imgix.net/mms/images/catalog/b65970c681d6fa3ea1b6760d3c137415/colors/116223/views/alt/front_medium_extended.png?ixlib=rails-2.1.4&w=320&h=380&fit=crop&dpr=1&q=39&fm=png&auto=format"
-                alt=""
-                height="300"
-              />
-              <div className="mask rgba-white-slight"></div>
-            </div>
-            <div className="card-body card-body-cascade text-center">
-              <h4 className="card-title">
-                <strong>
-                  <p>Title</p>
-                </strong>
-              </h4>
-              <p className="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda, reiciendis.{" "}
-              </p>
-              <p className="price">₹299</p>
-
-              <div className="card-footer">
-                <a href="/" className="btn btn-dark">
-                  Buy now
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-sm-4">
-          <div className="card card-cascade card-ecommerce wider shadow mb-5 bad">
-            <div className="view view-cascade overlay text-center">
-              {" "}
-              <img
-                className="card-img-top"
-                src="https://mms-images-prod.imgix.net/mms/images/catalog/b65970c681d6fa3ea1b6760d3c137415/colors/116223/views/alt/front_medium_extended.png?ixlib=rails-2.1.4&w=320&h=380&fit=crop&dpr=1&q=39&fm=png&auto=format"
-                alt=""
-                height="300"
-              />
-              <div className="mask rgba-white-slight"></div>
-            </div>
-            <div className="card-body card-body-cascade text-center">
-              <h4 className="card-title">
-                <strong>
-                  <p>Title</p>
-                </strong>
-              </h4>
-              <p className="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda, reiciendis.{" "}
-              </p>
-              <p className="price">₹299</p>
-
-              <div className="card-footer">
-                <a href="/" className="btn btn-dark">
-                  Buy now
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="row justify-content-center">
-        <div className="col-sm-4">
-          <div className="card card-cascade card-ecommerce wider shadow mb-5 worst">
-            <div className="view view-cascade overlay text-center">
-              {" "}
-              <img
-                className="card-img-top"
-                src="https://mms-images-prod.imgix.net/mms/images/catalog/b65970c681d6fa3ea1b6760d3c137415/colors/116223/views/alt/front_medium_extended.png?ixlib=rails-2.1.4&w=320&h=380&fit=crop&dpr=1&q=39&fm=png&auto=format"
-                alt=""
-                height="300"
-              />
-              <div className="mask rgba-white-slight"></div>
-            </div>
-            <div className="card-body card-body-cascade text-center">
-              <h4 className="card-title">
-                <strong>
-                  <p>Title</p>
-                </strong>
-              </h4>
-              <p className="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda, reiciendis.{" "}
-              </p>
-              <p className="price">₹299</p>
-
-              <div className="card-footer">
-                <a href="/" className="btn btn-dark">
-                  Buy now
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-sm-4">
-          <div className="card card-cascade card-ecommerce wider shadow mb-5 ">
-            <div className="view view-cascade overlay text-center">
-              {" "}
-              <img
-                className="card-img-top"
-                src="https://mms-images-prod.imgix.net/mms/images/catalog/b65970c681d6fa3ea1b6760d3c137415/colors/116223/views/alt/front_medium_extended.png?ixlib=rails-2.1.4&w=320&h=380&fit=crop&dpr=1&q=39&fm=png&auto=format"
-                alt=""
-                height="300"
-              />
-              <div className="mask rgba-white-slight"></div>
-            </div>
-            <div className="card-body card-body-cascade text-center">
-              <h4 className="card-title">
-                <strong>
-                  <p>Title</p>
-                </strong>
-              </h4>
-              <p className="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda, reiciendis.{" "}
-              </p>
-              <p className="price">₹299</p>
-
-              <div className="card-footer">
-                <a href="/" className="btn btn-dark">
-                  Buy now
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-sm-4">
-          <div className="card card-cascade card-ecommerce wider shadow mb-5 ">
-            <div className="view view-cascade overlay text-center">
-              {" "}
-              <img
-                className="card-img-top"
-                src="https://mms-images-prod.imgix.net/mms/images/catalog/b65970c681d6fa3ea1b6760d3c137415/colors/116223/views/alt/front_medium_extended.png?ixlib=rails-2.1.4&w=320&h=380&fit=crop&dpr=1&q=39&fm=png&auto=format"
-                alt=""
-                height="300"
-              />
-              <div className="mask rgba-white-slight"></div>
-            </div>
-            <div className="card-body card-body-cascade text-center">
-              <h4 className="card-title">
-                <strong>
-                  <p>Title</p>
-                </strong>
-              </h4>
-              <p className="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda, reiciendis.{" "}
-              </p>
-              <p className="price">₹299</p>
-
-              <div className="card-footer">
-                <a href="/" className="btn btn-dark">
-                  Buy now
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="row justify-content-center">
-        <div className="col-sm-4">
-          <div className="card card-cascade card-ecommerce wider shadow mb-5 ">
-            <div className="view view-cascade overlay text-center">
-              {" "}
-              <img
-                className="card-img-top"
-                src="https://mms-images-prod.imgix.net/mms/images/catalog/b65970c681d6fa3ea1b6760d3c137415/colors/116223/views/alt/front_medium_extended.png?ixlib=rails-2.1.4&w=320&h=380&fit=crop&dpr=1&q=39&fm=png&auto=format"
-                alt=""
-                height="300"
-              />
-              <div className="mask rgba-white-slight"></div>
-            </div>
-            <div className="card-body card-body-cascade text-center">
-              <h4 className="card-title">
-                <strong>
-                  <p>Title</p>
-                </strong>
-              </h4>
-              <p className="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda, reiciendis.{" "}
-              </p>
-              <p className="price">₹299</p>
-
-              <div className="card-footer">
-                <a href="/" className="btn btn-dark">
-                  Buy now
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-sm-4">
-          <div className="card card-cascade card-ecommerce wider shadow mb-5 ">
-            <div className="view view-cascade overlay text-center">
-              {" "}
-              <img
-                className="card-img-top"
-                src="https://mms-images-prod.imgix.net/mms/images/catalog/b65970c681d6fa3ea1b6760d3c137415/colors/116223/views/alt/front_medium_extended.png?ixlib=rails-2.1.4&w=320&h=380&fit=crop&dpr=1&q=39&fm=png&auto=format"
-                alt=""
-                height="300"
-              />
-              <div className="mask rgba-white-slight"></div>
-            </div>
-            <div className="card-body card-body-cascade text-center">
-              <h4 className="card-title">
-                <strong>
-                  <p>Title</p>
-                </strong>
-              </h4>
-              <p className="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda, reiciendis.{" "}
-              </p>
-              <p className="price">₹299</p>
-
-              <div className="card-footer">
-                <a href="/" className="btn btn-dark">
-                  Buy now
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-sm-4">
-          <div className="card card-cascade card-ecommerce wider shadow mb-5 ">
-            <div className="view view-cascade overlay text-center">
-              {" "}
-              <img
-                className="card-img-top"
-                src="https://mms-images-prod.imgix.net/mms/images/catalog/b65970c681d6fa3ea1b6760d3c137415/colors/116223/views/alt/front_medium_extended.png?ixlib=rails-2.1.4&w=320&h=380&fit=crop&dpr=1&q=39&fm=png&auto=format"
-                alt=""
-                height="300"
-              />
-              <div className="mask rgba-white-slight"></div>
-            </div>
-            <div className="card-body card-body-cascade text-center">
-              <h4 className="card-title">
-                <strong>
-                  <p>Title</p>
-                </strong>
-              </h4>
-              <p className="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda, reiciendis.{" "}
-              </p>
-              <p className="price">₹299</p>
-
-              <div className="card-footer">
-                <a href="/" className="btn btn-dark">
-                  Buy now
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+			</div>
+		</div>
+	)
 }
 
-export default Items;
+export default Items
