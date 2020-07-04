@@ -88,3 +88,14 @@ body {
 .color-card {
   background-color: rgb(255, 88, 28) !important;
 }
+.product {
+  font-family: "minion-pro";
+}
+
+.product h1 {
+  color: rgb(136, 118, 20);
+}
+
+.product-buttons button {
+  margin: 2px;
+}
