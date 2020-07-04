@@ -64,16 +64,19 @@ body {
   color: white;
 }
 .good:hover {
-  border: 7px solid yellow;
+  background-color: rgb(204, 204, 0);
+  color: white;
 }
 .best:hover {
-  border: 7px solid green;
+  background-color: green;
+  color: white;
 }
 .bad:hover {
-  border: 7px solid orange;
+  background-color: orange;
+  color: white;
 }
 .worst:hover {
-  border: 7px solid orange;
+  background-color: orange;
 }
 
 .rating-system {
