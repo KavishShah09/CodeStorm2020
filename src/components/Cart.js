@@ -43,6 +43,7 @@ function Cart() {
 
 	function handleToken(token, addresses) {
 		console.log({ token, addresses })
+		window.location.replace('http://localhost:3000/thanks')
 	}
 
 	useEffect(() => {
